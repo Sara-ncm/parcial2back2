@@ -1,7 +1,13 @@
 package com.example.parcial2;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "salas")
+@Data
+@NoArgsConstructor
 public class Sala {
 
     @Id
@@ -9,10 +15,9 @@ public class Sala {
     private Long id;
 
     private String nombre;
-    private Integer capacidad;
-    private String tipo; // 2D, 3D, IMAX...
+    private int capacidad;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cine_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "cine_id")
     private Cine cine;
 }

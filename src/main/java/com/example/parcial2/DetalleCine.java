@@ -1,7 +1,13 @@
 package com.example.parcial2;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "detalles_cine")
+@Data
+@NoArgsConstructor
 public class DetalleCine {
 
     @Id
@@ -9,10 +15,10 @@ public class DetalleCine {
     private Long id;
 
     private String direccion;
-    private String ciudad;
     private String telefono;
 
     @OneToOne
-    @JoinColumn(name = "cine_id", nullable = false, unique = true)
+    @JoinColumn(name = "cine_id")
     private Cine cine;
 }
+

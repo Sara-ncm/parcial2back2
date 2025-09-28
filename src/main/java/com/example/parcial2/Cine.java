@@ -1,7 +1,14 @@
 package com.example.parcial2;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.util.List;
+
 @Entity
 @Table(name = "cines")
+@Data
+@NoArgsConstructor
 public class Cine {
 
     @Id
